@@ -34,7 +34,7 @@ INSTALLED_APPS = [
 
     'operations',
 ]
-
+#REFACTOR
 CORS_ALLOWED_ORIGINS = ['http://localhost:5173']
 
 MIDDLEWARE = [
