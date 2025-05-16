@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from ..models import Operation, Project, Well, Crew
-from .serializers import OperationSerializer, ProjectSerializer, WellSerializer, CrewSerializer
+from ..models import Operation, Project, Well, Crew, PRA
+from .serializers import OperationSerializer, ProjectSerializer, WellSerializer, CrewSerializer, PraSerializer
 
 class OperationViewSet(ModelViewSet):
     queryset = Operation.objects.all()
@@ -17,3 +17,7 @@ class WellViewSet(ModelViewSet):
 class CrewViewSet(ModelViewSet):
     queryset = Crew.objects.all()
     serializer_class = CrewSerializer
+
+class PraViewSet(ModelViewSet):
+    queryset = PRA.objects.all()
+    serializer_class = PraSerializer

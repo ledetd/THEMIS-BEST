@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from ..models import Operation, Project, Well, Crew
+from ..models import Operation, Project, Well, Crew, PRA
 
 class OperationSerializer(ModelSerializer):
     class Meta:
@@ -20,3 +20,8 @@ class CrewSerializer(ModelSerializer):
     class Meta:
         model = Crew
         fields = ('crew_first_name', 'crew_last_name', 'crew_position')
+
+class PraSerializer(ModelSerializer):
+    class Meta:
+        model = PRA
+        fields = ('project_name', 'task_name')

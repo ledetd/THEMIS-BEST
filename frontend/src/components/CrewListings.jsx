@@ -22,9 +22,6 @@ const CrewListings = () => {
         }, []);
   return (
     <>
-
-    
-    
            <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
@@ -33,6 +30,9 @@ const CrewListings = () => {
             A list of all the crew in the database.
           </p>
         </div>
+        </div>
+
+        <div>
 
 
                <div className="mt-8 flow-root">
@@ -71,7 +71,7 @@ const CrewListings = () => {
   </div>
    </div>
     </div>
-          
+         
       
     </>
   )

@@ -5,7 +5,7 @@ import axios from 'axios'
 const WellListings = () => {
 
 
-        const [wellsData, setWellsData] = useState([]);
+    const [wellsData, setWellsData] = useState([]);
     
     const endpoint = `${import.meta.env.VITE_API_URL}wells/`
     
@@ -38,7 +38,8 @@ const WellListings = () => {
             A list of all the wells in the database.
           </p>
         </div>
-
+</div>
+<div>
 
                <div className="mt-8 flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
