@@ -1,29 +1,30 @@
-import { useState, useEffect } from 'react'
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import HomePage from './pages/HomePage';
+import ProjectsPage from './pages/ProjectsPage';
+import WellsPage from './pages/WellsPage';
 
-import ProjectListings from './components/ProjectListings'
-import WellListings from './components/WellListings'
-import CrewListings from './components/CrewListings'
-import PraListings from './components/PraListings'
-import HomePage from './pages/HomePage'
 
-
-function App() {
-
+const App = () => {
  
-  return (
-    <>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path='/projects' element={<ProjectsPage />} />
+        <Route path='/wells' element={<WellsPage />} />
+      </Route>
+    )
+  );
+
+  return <RouterProvider router={router} />;
+};
+export default App;
 
 
-<HomePage />
-<ProjectListings />
-<WellListings />
-<CrewListings />
-<PraListings />
 
-
-    
-    </>
-  )
-}
-
-export default App

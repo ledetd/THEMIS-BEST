@@ -14,7 +14,9 @@ class ProjectSerializer(ModelSerializer):
 class WellSerializer(ModelSerializer):
     class Meta:
         model = Well
-        fields = ('well_name',)
+        fields = ('well_name', 'project_name')
+
+
 
 class CrewSerializer(ModelSerializer):
     class Meta:

@@ -27,9 +27,6 @@ const WellListings = () => {
         
   return (
     <>
-
-
-    
            <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
@@ -40,7 +37,6 @@ const WellListings = () => {
         </div>
 </div>
 <div>
-
                <div className="mt-8 flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -59,6 +55,11 @@ const WellListings = () => {
 <tr key={well.id}>
 <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
 {well.well_name}
+
+</td>
+<td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+{well.project_name}
+
 </td>
 
 

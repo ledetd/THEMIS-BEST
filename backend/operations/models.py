@@ -6,9 +6,10 @@ class Operation(models.Model):
 
     def __str__(self):
         return f'{self.operation_name} {self.operation_location}'
-    
+
+
 class Project(models.Model):
-    project_name = models.CharField(max_length=100)
+    project_name = models.CharField(unique=True, max_length=100)
     project_location = models.CharField(max_length=100)
     project_customer = models.CharField(max_length=100)
     project_manager = models.CharField(max_length=100)
@@ -18,7 +19,8 @@ class Project(models.Model):
         return self.project_name
     
 class Well(models.Model):
-    well_name = models.CharField(max_length=100)
+    project_name = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True, blank=True)
+    well_name = models.CharField(unique=True, max_length=100)
     
     def __str__(self):
         return self.well_name
