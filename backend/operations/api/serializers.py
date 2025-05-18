@@ -1,4 +1,5 @@
-from rest_framework.serializers import ModelSerializer
+
+from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from ..models import Operation, Project, Well, Crew, PRA
 
 class OperationSerializer(ModelSerializer):
@@ -12,11 +13,14 @@ class ProjectSerializer(ModelSerializer):
         fields = ('project_name', 'project_location', 'project_customer', 'project_manager', 'date_created')
 
 class WellSerializer(ModelSerializer):
+    project_name = SerializerMethodField()
+
+    def get_project_name(self, obj):
+        return obj.project_name.project_name
+    
     class Meta:
         model = Well
-        fields = ('well_name', 'project_name')
-
-
+        fields = ('project_name', 'well_name')
 
 class CrewSerializer(ModelSerializer):
     class Meta:
