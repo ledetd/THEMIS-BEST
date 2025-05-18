@@ -8,6 +8,7 @@ import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import WellsPage from './pages/WellsPage';
+import DailyReportsPage from './pages/DailyReportsPage';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path='/projects' element={<ProjectsPage />} />
         <Route path='/wells' element={<WellsPage />} />
+        <Route path='/daily_reports' element={<DailyReportsPage />} />
       </Route>
     )
   );

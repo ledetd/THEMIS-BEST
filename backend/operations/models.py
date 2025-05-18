@@ -7,12 +7,18 @@ class Operation(models.Model):
     def __str__(self):
         return f'{self.operation_name} {self.operation_location}'
 
+class ProjectManager(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
 
 class Project(models.Model):
     project_name = models.CharField(unique=True, max_length=100)
     project_location = models.CharField(max_length=100)
     project_customer = models.CharField(max_length=100)
-    project_manager = models.CharField(max_length=100)
+    project_manager = models.ForeignKey(ProjectManager, on_delete=models.SET_NULL, null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
@@ -33,6 +39,15 @@ class Crew(models.Model):
     def __str__(self):
         return f'{self.crew_first_name} {self.crew_last_name}'
     
+class DailyReport(models.Model):
+    project_name = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True, blank=True)
+    well_name = models.ForeignKey(Well, on_delete=models.SET_NULL, null=True, blank=True)
+    current_status = models.CharField(max_length=1000)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.well_name} - {self.current_status}'
+        
 class PRA(models.Model):
     project_name = models.ForeignKey(Project, on_delete=models.CASCADE)
     task_name = models.CharField(max_length=100)

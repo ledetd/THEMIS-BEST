@@ -26,8 +26,10 @@ const Navbar = () => {
 
       <div className="md:ml-auto">
         <div className="flex space-x-2">
-            <a href='#'>Wells</a>
+            
             <a href='#'>Projects</a>
+            <a href='#'>Wells</a>
+            <a href='#'>DailyReports</a>
 
         </div>
       </div>
