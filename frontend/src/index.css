@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav.best-bg {
+    background-color: #002855;
+}
+
+nav.best-border {
+    color: #F3BA16;
+}

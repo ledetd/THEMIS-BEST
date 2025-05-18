@@ -16,7 +16,7 @@ class ProjectSerializer(ModelSerializer):
     project_manager = SerializerMethodField()
 
     def get_project_manager(self, obj):
-        return f'{obj.first_name} {obj.last_name}'
+        return f'{obj.project_manager.first_name} {obj.project_manager.last_name}'
     
     class Meta:
         model = Project
