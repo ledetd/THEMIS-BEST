@@ -20,13 +20,6 @@ class Position(models.Model):
     def __str__(self):
         return self.position_name
     
-class Crew(models.Model):
-    crew_first_name = models.CharField(max_length=100)
-    crew_last_name = models.CharField(max_length=100)
-    crew_position = models.ForeignKey(Position, on_delete=models.SET_NULL, null=True, blank=True)
-
-    def __str__(self):
-        return f'{self.crew_first_name} {self.crew_last_name}'
 
 class Project(models.Model):
     project_name = models.CharField(unique=True, max_length=100)
@@ -47,7 +40,13 @@ class Well(models.Model):
     def __str__(self):
         return self.well_name
     
+class Crew(models.Model):
+    crew_first_name = models.CharField(max_length=100)
+    crew_last_name = models.CharField(max_length=100)
+    crew_position = models.ForeignKey(Position, on_delete=models.SET_NULL, null=True, blank=True)
 
+    def __str__(self):
+        return f'{self.crew_first_name} {self.crew_last_name}'
     
 
     
