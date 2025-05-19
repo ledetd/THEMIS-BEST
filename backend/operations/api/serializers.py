@@ -22,15 +22,16 @@ class ProjectSerializer(ModelSerializer):
         model = Project
         fields = ('project_name', 'project_location', 'project_customer', 'project_manager', 'date_created')
 
+
 class WellSerializer(ModelSerializer):
     project_name = SerializerMethodField()
-
+  
     def get_project_name(self, obj):
         return obj.project_name.project_name
     
     class Meta:
         model = Well
-        fields = ('project_name', 'well_name')
+        fields = ('project_name', 'well_name', 'current_status', 'date_updated')
 
 class DailyReportSerializer(ModelSerializer):
     project_name = SerializerMethodField()
